@@ -8,6 +8,8 @@ namespace Project2_TellerWithMethods
 {
     class Program
     {
+        // private static string myString;
+
         static void Main(string[] args)
         {
             Console.WriteLine("What is your first name?");
@@ -20,38 +22,30 @@ namespace Project2_TellerWithMethods
 
             Console.WriteLine("How old are you?");
             int age = int.Parse(Console.ReadLine());
-           
-            numberOfYears(age);
+
+            int x = numberOfYears(age);
 
             Console.WriteLine("How many siblings do you have?");
             int siblings = int.Parse(Console.ReadLine());
-            siblingVacation(siblings);
+
+            string y = SibVacation(siblings);
+
+            Console.WriteLine("You will retire in " + x + " years to a beautiful house in " + y);
+
+
+            Console.WriteLine("What is your favorite ROYGBIV color. Not sure what that means? Just respond with the word \"help\"");
+            string favColor = Console.ReadLine();
 
 
 
 
 
-            //Console.WriteLine("Hello, and welcome to Fortune Teller!");
-            //Console.WriteLine("Fill out the questionnaire and see what your future holds!");
 
-            //Console.WriteLine("What is your first name?");
-            //string firstName = (Console.ReadLine());
+            Console.ReadKey();
 
-            //Console.WriteLine("What is your last name?");
-            //string lastName = (Console.ReadLine());
 
-            //Console.WriteLine("How old are you?");
-            //int age = int.Parse(Console.ReadLine());
-            //string retire = "";
 
-            //if (age % 2 == 0)
-            //{
-            //    retire = ("You will retire in 30 years.");
-            //}
-            //else
-            //{
-            //    retire = ("You will retire in 1 year!");
-            //}
+
 
             //Console.WriteLine("What month were you born? (\"1-12\")");
             //int birthMonth = int.Parse(Console.ReadLine());
@@ -74,78 +68,6 @@ namespace Project2_TellerWithMethods
             //    bank = 0.0f;
             //}
 
-            //Console.WriteLine("Whats your favorite ROYGBIV color? \nNot sure what that means? \njust say \"Help.\"");
-            //string favColor = (Console.ReadLine());
-            //string favColorCaps = favColor.ToUpper();
-
-            //string newColor = "";
-
-
-            //if (favColorCaps == "HELP")
-            //{
-            //    Console.WriteLine("ROYGBIV stands for \"Red, Orange, Yellow, Green, Blue, Indigo, Violet\". Which is your favorite?");
-            //    favColor = Console.ReadLine();
-            //    favColorCaps = favColor.ToUpper();
-            //}
-
-            //switch (favColorCaps)
-            //{
-            //    case "RED":
-            //        newColor = ("you'll man a raft");
-            //        break;
-            //    case "ORANGE":
-            //        newColor = ("you'll drive a Ferrari");
-            //        break;
-            //    case "YELLOW":
-            //        newColor = ("you'll drive a Jeep");
-            //        break;
-            //    case "GREEN":
-            //        newColor = ("you'll drive a new Tesla");
-            //        break;
-            //    case "BLUE":
-            //        newColor = ("you'll fly in a Private Jet");
-            //        break;
-            //    case "INDIGO":
-            //        newColor = ("you'll water whip on a hot jet ski dog");
-            //        break;
-            //    case "VIOLET":
-            //        newColor = ("you'll ride a recumbent bike");
-            //        break;
-
-            //}
-
-
-
-            //Console.WriteLine("How many siblings do you have?");
-            //int sib = int.Parse(Console.ReadLine());
-            //string vacation = "";
-
-
-            //if (sib == 0)
-            //{
-            //    vacation = ("Maui");
-
-            //}
-            //else if (sib == 1)
-            //{
-            //    vacation = ("Paris, France");
-
-            //}
-            //else if (sib == 2)
-            //{
-            //    vacation = ("Youngstown,OH");
-
-            //}
-            //else if (sib == 3)
-            //{
-            //    vacation = ("Sidney, Australia");
-
-            //}
-            //else
-            //{
-            //    vacation = ("Your ex's parents backyard");
-
-            //}
 
             ////final statement
 
@@ -154,64 +76,102 @@ namespace Project2_TellerWithMethods
             //Console.WriteLine("Thank you for playing!");
 
         }
-
+        // Greeting method
         static void userGreeting(string firstName, string lastName)
-    
-            {
-                Console.WriteLine("Greetings " + firstName + " " + lastName + ", I will tell you your fortune!");
-            }
+
+        {
+            Console.WriteLine("Greetings " + firstName + " " + lastName + ", I will tell you your fortune!");
+        }
+        //Retirement Method
         static int numberOfYears(int age)
-            {
+        {
             int retire;
             if (age % 2 == 0)
             {
-                retire = (30);
+
+                return (30);
+
             }
             else
             {
-                retire = (1);
+                return (5);
             }
-            return retire;
-            }
-        static void siblingVacation(int siblings)
-            {
-            int vacation;
+
+        }
+
+
+        //Vacation Home Method
+        static string SibVacation(int siblings)
+        {
+
+            string vacation;
 
 
             if (siblings == 0)
             {
-                vacation = (0);
-                string myString = vacation.ToString("Maui");
-                Console.WriteLine(myString);
+                vacation = "Maui!";
+
             }
+
             else if (siblings == 1)
             {
-                vacation = (1);
-                string myString = vacation.ToString("Paris, France");
-                Console.WriteLine(myString);
+                vacation = "Paris, France!";
             }
             else if (siblings == 2)
             {
-                vacation = (2);
-                string myString = vacation.ToString("Auckland, New Zealand");
-                Console.WriteLine(myString);
+
+                vacation = ("Auckland, New Zealand!");
             }
             else if (siblings == 3)
             {
-                vacation = (3);
-                string myString = vacation.ToString("Tokyo, Japan");
-                Console.WriteLine(myString);
+
+                vacation = ("Tokyo, Japan!");
             }
             else if (siblings >= 4)
             {
-                vacation = (4);
-                string myString = vacation.ToString("Your ex's parents backyard");
-                Console.WriteLine(myString);
+                return
+                vacation = ("Your ex's parents backyard!");
             }
-            
-
-
+            else
+            {
+                return
+                vacation = ("Montreal, Canada!");
             }
+            return vacation;
         }
+
+        //ROYGBIV Method
+        static string FavoriteColor(string favColor);
+        //favColorCaps = favColor.ToUpper();
+
+            switch (favColorCaps)
+
+                case "RED":
+                    newColor = ("you'll man a raft");
+                    break;
+                case "ORANGE":
+                    newColor = ("you'll drive a Ferrari");
+                    break;
+                case "YELLOW":
+                    newColor = ("you'll drive a Jeep");
+                    break;
+                case "GREEN":
+                    newColor = ("you'll drive a new Tesla");
+                    break;
+                case "BLUE":
+                    newColor = ("you'll fly in a Private Jet");
+                    break;
+                case "INDIGO":
+                    newColor = ("you'll water whip on a hot jet ski dog");
+                    break;
+                case "VIOLET":
+                    newColor = ("you'll ride a recumbent bike");
+                    break;
+
     }
+
+}
+
+
+
 
