@@ -12,9 +12,9 @@ namespace Project2_TellerWithMethods
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome! I am Shaq Fu, and I will read you your fortune!");
-            Console.WriteLine("Please type \"quit\" at anytime to quit.\n Or \"restart\" to restart!");
-
+            Console.WriteLine("Welcome! I am Kazaam, and I will read you your fortune!");
+            Console.WriteLine("Please type \"quit\" at anytime to quit.\nOr \"restart\" to restart!");
+            Console.WriteLine();
             Console.WriteLine("What is your first name?");
             string firstName = Console.ReadLine();
             exitMethod(firstName);
@@ -25,30 +25,42 @@ namespace Project2_TellerWithMethods
 
             userGreeting(firstName, lastName);
 
-            Console.WriteLine("How old are you?");
+            Console.WriteLine("How old are you?\nEnter your age then press enter twice.");
             int age = int.Parse(Console.ReadLine());
+            string ageQuit = Console.ReadLine();
+            exitMethod(ageQuit);
             
-
             int x = numberOfYears(age);
 
-            Console.WriteLine("How many siblings do you have?");
+            Console.WriteLine("How many siblings do you have?\nEnter how many you have then press enter twice."); 
             int siblings = int.Parse(Console.ReadLine());
+            string sibQuit = Console.ReadLine();
+            exitMethod(sibQuit);
 
             string y = SibVacation(siblings);
 
-            Console.WriteLine("You will retire in " + x + " years to a beautiful house in " + y);
-
-
-            Console.WriteLine("What is your favorite ROYGBIV color. Not sure what that means? Just respond with the word \"help\"");
+           
+            Console.WriteLine("What is your favorite ROYGBIV color. Not sure what that means? Just respond with the word \"help\".");
             string favColor = Console.ReadLine();
+            string a = RetireVehicle(favColor);
             exitMethod(favColor);
 
+            Console.WriteLine("What is your birth month? enter in \"1-12\" format.");
+            int userbirthMonth = int.Parse(Console.ReadLine());
+            double z = userMoney(userbirthMonth);
 
+            Console.WriteLine();
+            Console.WriteLine();
+            
 
-
-
+            Console.WriteLine(firstName + " " + lastName + ", you will retire in " + x + " years,\nwith $" + z + " million dollars in the bank, \na vacation home in " + y + ", and a " + a);
+            Console.WriteLine();
+            fortuneJudge();
+            Console.WriteLine();
+            Console.WriteLine("Thanks for playing!");
 
             Console.ReadKey();
+
 
 
         }
@@ -88,33 +100,33 @@ namespace Project2_TellerWithMethods
 
             if (siblings == 0)
             {
-                vacation = "Maui!";
+                vacation = "Maui";
 
             }
 
             else if (siblings == 1)
             {
-                vacation = "Paris, France!";
+                vacation = "Paris, France";
             }
             else if (siblings == 2)
             {
 
-                vacation = ("Auckland, New Zealand!");
+                vacation = ("Auckland, New Zealand");
             }
             else if (siblings == 3)
             {
 
-                vacation = ("Tokyo, Japan!");
+                vacation = ("Tokyo, Japan");
             }
             else if (siblings >= 4)
             {
                 return
-                vacation = ("Your ex's parents backyard!");
+                vacation = ("Your ex's parents backyard");
             }
             else
             {
                 return
-                vacation = ("Montreal, Canada!");
+                vacation = ("Montreal, Canada");
             }
             return vacation;
         }
@@ -129,32 +141,32 @@ namespace Project2_TellerWithMethods
 
             if (favColor == "help")
             {
-                Console.WriteLine("\"ROYGBIV\" stands for Red, Orange, Yellow,\n Green, Blue, Indigo, and Violet.");
+                Console.WriteLine("\"ROYGBIV\" stands for Red, Orange, Yellow,\nGreen, Blue, Indigo, and Violet.\nPlease choose your favorite:");
                 favColor = Console.ReadLine();
             }
 
             switch (favColor.ToUpper())
             {
                 case "RED":
-                    myString = ("Porche");
+                    myString = ("Porche.");
                     break;
                 case "ORANGE":
-                    myString = ("Harley Davidson");
+                    myString = ("Harley Davidson.");
                     break;
                 case "YELLOW":
-                    myString = ("Leer Jet");
+                    myString = ("Leer Jet.");
                     break;
                 case "GREEN":
-                    myString = ("Recumbent bike");
+                    myString = ("Recumbent bike.");
                     break;
                 case "BLUE":
-                    myString = ("Jetpack");
+                    myString = ("Jetpack.");
                     break;
                 case "INDIGO":
-                    myString = ("18 wheeler");
+                    myString = ("sweet dirtbike.");
                     break;
                 case "VIOLET":
-                    myString = ("Tesla");
+                    myString = ("Tesla.");
                     break;
             }
 
@@ -164,25 +176,25 @@ namespace Project2_TellerWithMethods
             static double userMoney(int birthMonth)
             {
                 
-                float bank;
+                double bank;
 
                 if (birthMonth >= 1 && birthMonth <= 4)
                 {
-                    bank = 4.20f;
+                    bank = 4.20;
                 }
                 else if (birthMonth >= 5 && birthMonth <= 8)
                 {
-                    bank = 1.01f;
+                    bank = 1.01;
                 }
                 else if (birthMonth >= 9 && birthMonth <= 12)
                 {
-                    bank = 409.22f;
+                    bank = 409.22;
                 }
                 else
                 {
-                    bank = 0.0f;
+                    bank = 0.0;
                 }
-
+                Convert.ToDecimal(string.Format("{0:0.00}", bank));
                 return bank;
 
             }
@@ -214,8 +226,8 @@ namespace Project2_TellerWithMethods
     }
             
 
-    }
 }
+
 
 
 
