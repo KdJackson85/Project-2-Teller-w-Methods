@@ -12,16 +12,22 @@ namespace Project2_TellerWithMethods
 
         static void Main(string[] args)
         {
+            Console.WriteLine("Welcome! I am Shaq Fu, and I will read you your fortune!");
+            Console.WriteLine("Please type \"quit\" at anytime to quit.\n Or \"restart\" to restart!");
+
             Console.WriteLine("What is your first name?");
             string firstName = Console.ReadLine();
+            exitMethod(firstName);
 
             Console.WriteLine("What is your last name?");
             string lastName = Console.ReadLine();
+            exitMethod(lastName);
 
             userGreeting(firstName, lastName);
 
             Console.WriteLine("How old are you?");
             int age = int.Parse(Console.ReadLine());
+            
 
             int x = numberOfYears(age);
 
@@ -35,6 +41,7 @@ namespace Project2_TellerWithMethods
 
             Console.WriteLine("What is your favorite ROYGBIV color. Not sure what that means? Just respond with the word \"help\"");
             string favColor = Console.ReadLine();
+            exitMethod(favColor);
 
 
 
@@ -44,47 +51,19 @@ namespace Project2_TellerWithMethods
             Console.ReadKey();
 
 
-
-
-
-            //Console.WriteLine("What month were you born? (\"1-12\")");
-            //int birthMonth = int.Parse(Console.ReadLine());
-            //float bank;
-
-            //if (birthMonth >= 1 && birthMonth <= 4)
-            //{
-            //    bank = 4.20f;
-            //}
-            //else if (birthMonth >= 5 && birthMonth <= 8)
-            //{
-            //    bank = 1.01f;
-            //}
-            //else if (birthMonth >= 9 && birthMonth <= 12)
-            //{
-            //    bank = 409.22f;
-            //}
-            //else
-            //{
-            //    bank = 0.0f;
-            //}
-
-
-            ////final statement
-
-            //Console.WriteLine(firstName + " " + lastName + "," + " your fortune is..." + retire + " With $" + bank + " million dollars in the bank," + "\n" + "a vacation home in " + vacation + ", and " + newColor + ".");
-
-            //Console.WriteLine("Thank you for playing!");
-
         }
         // Greeting method
         static void userGreeting(string firstName, string lastName)
 
         {
-            Console.WriteLine("Greetings " + firstName + " " + lastName + ", I will tell you your fortune!");
+          
+                Console.WriteLine("Greetings " + firstName + " " + lastName + ", I will tell you your fortune!");
+        
         }
         //Retirement Method
         static int numberOfYears(int age)
         {
+        
             int retire;
             if (age % 2 == 0)
             {
@@ -103,7 +82,7 @@ namespace Project2_TellerWithMethods
         //Vacation Home Method
         static string SibVacation(int siblings)
         {
-
+            
             string vacation;
 
 
@@ -141,35 +120,101 @@ namespace Project2_TellerWithMethods
         }
 
         //ROYGBIV Method
-        static string FavoriteColor(string favColor);
-        //favColorCaps = favColor.ToUpper();
 
-            switch (favColorCaps)
 
+        static string RetireVehicle(string favColor)
+        {
+
+            string myString = "";
+
+            if (favColor == "help")
+            {
+                Console.WriteLine("\"ROYGBIV\" stands for Red, Orange, Yellow,\n Green, Blue, Indigo, and Violet.");
+                favColor = Console.ReadLine();
+            }
+
+            switch (favColor.ToUpper())
+            {
                 case "RED":
-                    newColor = ("you'll man a raft");
+                    myString = ("Porche");
                     break;
                 case "ORANGE":
-                    newColor = ("you'll drive a Ferrari");
+                    myString = ("Harley Davidson");
                     break;
                 case "YELLOW":
-                    newColor = ("you'll drive a Jeep");
+                    myString = ("Leer Jet");
                     break;
                 case "GREEN":
-                    newColor = ("you'll drive a new Tesla");
+                    myString = ("Recumbent bike");
                     break;
                 case "BLUE":
-                    newColor = ("you'll fly in a Private Jet");
+                    myString = ("Jetpack");
                     break;
                 case "INDIGO":
-                    newColor = ("you'll water whip on a hot jet ski dog");
+                    myString = ("18 wheeler");
                     break;
                 case "VIOLET":
-                    newColor = ("you'll ride a recumbent bike");
+                    myString = ("Tesla");
                     break;
+            }
+
+            return myString;
+        }
+           //Money_in_bank Method 
+            static double userMoney(int birthMonth)
+            {
+                
+                float bank;
+
+                if (birthMonth >= 1 && birthMonth <= 4)
+                {
+                    bank = 4.20f;
+                }
+                else if (birthMonth >= 5 && birthMonth <= 8)
+                {
+                    bank = 1.01f;
+                }
+                else if (birthMonth >= 9 && birthMonth <= 12)
+                {
+                    bank = 409.22f;
+                }
+                else
+                {
+                    bank = 0.0f;
+                }
+
+                return bank;
+
+            }
+            //Fortune Comment Method
+            static void fortuneJudge()
+            {
+
+            Console.WriteLine("What a fantastic future you have on the horizon!");
+
+            }
+            //Exit Method
+            static void exitMethod(string exitQuit)
+            {
+            string myVar = exitQuit.ToLower();
+            if (myVar == "quit")
+            {
+                Console.WriteLine("Sorry to see you go. Please try again soon!");
+                Environment.Exit(0);
+            }
+            else if (myVar == "restart")
+            {
+                
+                string[] args = { };
+                Console.Clear();
+                Main(args);
+                Environment.Exit(0);
+            }
+        }
+    }
+            
 
     }
-
 }
 
 
