@@ -30,30 +30,29 @@ namespace Project2_TellerWithMethods
             string ageQuit = Console.ReadLine();
             exitMethod(ageQuit);
             
-            int x = numberOfYears(age);
+            int retireYears = numberOfYears(age);
 
             Console.WriteLine("How many siblings do you have?\nEnter how many you have then press enter twice."); 
             int siblings = int.Parse(Console.ReadLine());
             string sibQuit = Console.ReadLine();
             exitMethod(sibQuit);
 
-            string y = SibVacation(siblings);
+            string vacationHome = SibVacation(siblings);
 
-           
             Console.WriteLine("What is your favorite ROYGBIV color. Not sure what that means? Just respond with the word \"help\".");
             string favColor = Console.ReadLine();
-            string a = RetireVehicle(favColor);
+            string vehicle = RetireVehicle(favColor);
             exitMethod(favColor);
 
             Console.WriteLine("What is your birth month? enter in \"1-12\" format.");
             int userbirthMonth = int.Parse(Console.ReadLine());
-            double z = userMoney(userbirthMonth);
+            double moneyBank = userMoney(userbirthMonth);
 
             Console.WriteLine();
             Console.WriteLine();
             
 
-            Console.WriteLine(firstName + " " + lastName + ", you will retire in " + x + " years,\nwith $" + z + " million dollars in the bank, \na vacation home in " + y + ", and a " + a);
+            Console.WriteLine(firstName + " " + lastName + ", you will retire in " + retireYears + " years,\nwith $" + moneyBank + " million dollars in the bank, \na vacation home in " + vacationHome + ", and a " + vehicle);
             Console.WriteLine();
             fortuneJudge();
             Console.WriteLine();
